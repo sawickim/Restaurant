@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  my-web-app-db:
+    image: postgres
+    environment:
+      - POSGRESQL_ROOT_PASSWORD:admin
+      - POSTGRESQL_DATABASE:PostgreSQL13
+  my-web-app:
+    build: .
+    ports:
+    - "8080:8080"
+    depends_on:
+      - my-web-app-db
