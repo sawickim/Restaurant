@@ -3,8 +3,8 @@ services:
   my-web-app-db:
     image: postgres
     environment:
-      - POSGRESQL_ROOT_PASSWORD:admin
-      - POSTGRESQL_DATABASE:PostgreSQL13
+      POSTGRES_DB: "postgres"
+      POSTGRES_HOST_AUTH_METHOD: "trust"
   my-web-app:
     build: .
     ports:
